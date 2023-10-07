@@ -1,4 +1,7 @@
 <?php
+/*
+
+*/
 $angka = 69;
 
 // berikut contoh if-else
