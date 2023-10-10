@@ -1,6 +1,8 @@
 <?php
 /*
 elemen array boleh memiliki tipe data yang berbeda
+
+ada 2 data array numerik & associative
 */
 
 $hari = ['Senin', 'Selasa', 'Rabu'];

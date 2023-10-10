@@ -1,0 +1,1 @@
+<!-- Membuat 5 data dalam array dengn memunculkan output nya -->
