@@ -50,6 +50,28 @@ function delete($id)
   return mysqli_affected_rows($conn);
 }
 
+function update($data)
+{
+  global $conn;
+
+  $id = $data["id"];
+  $nim = htmlspecialchars($data['nim']);
+  $nama = htmlspecialchars($data['nama']);
+  $jurusan = htmlspecialchars($data['jurusan']);
+  $email = htmlspecialchars($data['email']);
+
+  $query = "UPDATE mahasiswa SET 
+          nim = '$nim',
+          nama = '$nama',
+          jurusan = '$jurusan',
+          email = '$email' 
+            WHERE id = $id";
+
+  mysqli_query($conn, $query);
+
+  return mysqli_affected_rows($conn);
+}
+
 // ambil data (fetch) mahasiswa dari object result
 // mysqli_fetch_row()     // mengembalikan array numerik
 // mysqli_fetch_assoc()   // mengembalikan array associative

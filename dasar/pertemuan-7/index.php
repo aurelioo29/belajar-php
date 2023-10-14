@@ -41,8 +41,8 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
         <td><?php echo $row["jurusan"] ?></td>
         <td><?php echo $row["email"] ?></td>
         <td>
-          <a href="">EDIT</a> |
-          <a href="delete.php?id=<?php $row["id"]; ?>">DELETE</a>
+          <a href="crud/update.php?id=<?php echo $row["id"]; ?>">EDIT</a> |
+          <a href="crud/delete.php?id=<?php echo $row["id"]; ?>">DELETE</a>
         </td>
       </tr>
       <?php $i++ ?>
