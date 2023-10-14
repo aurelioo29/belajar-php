@@ -42,7 +42,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
         <td><?php echo $row["email"] ?></td>
         <td>
           <a href="">EDIT</a> |
-          <a href="delete.php?id=<?php $row["id"] ?>">DELETE</a>
+          <a href="delete.php?id=<?php $row["id"]; ?>">DELETE</a>
         </td>
       </tr>
       <?php $i++ ?>
