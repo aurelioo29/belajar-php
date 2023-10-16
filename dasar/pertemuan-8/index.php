@@ -4,6 +4,11 @@ require 'functions.php';
 
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
+// ini codingan tombol search
+if (isset($_POST['search'])){
+  $mahasiswa = search($_POST['keyword']);
+}
+
 ?> 
 
 <!DOCTYPE html>
@@ -21,6 +26,13 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
   <a href="crud/create.php">ADD</a>
 
   <br><br>
+
+  <form action="" method="post">
+    <input type="text" name="keyword" placeholder="masukan pencarian" autocomplete="off" autofocus>
+    <button type="submit" id="search">Search</button>
+  </form>
+
+  <br>
 
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>

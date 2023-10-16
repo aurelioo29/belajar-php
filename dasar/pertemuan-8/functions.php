@@ -72,6 +72,17 @@ function update($data)
   return mysqli_affected_rows($conn);
 }
 
+function search($keyword){
+  $query = "SELECT * FROM mahasiswa WHERE nim 
+            LIKE '%$keyword%' OR 
+            nama LIKE '%$keyword%' OR 
+            jurusan LIKE '%$keyword%' OR 
+            email LIKE '%$keyword%'
+          ";
+
+  return query($query);
+}
+
 // ambil data (fetch) mahasiswa dari object result
 // mysqli_fetch_row()     // mengembalikan array numerik
 // mysqli_fetch_assoc()   // mengembalikan array associative
