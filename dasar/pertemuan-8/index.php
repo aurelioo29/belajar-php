@@ -5,8 +5,8 @@ require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
 // ini codingan tombol search
-if (isset($_POST['search'])){
-  $mahasiswa = search($_POST['keyword']);
+if (isset($_POST["cari"])){
+  $mahasiswa = cari($_POST["keyword"]);
 }
 
 ?> 
@@ -29,7 +29,7 @@ if (isset($_POST['search'])){
 
   <form action="" method="post">
     <input type="text" name="keyword" placeholder="masukan pencarian" autocomplete="off" autofocus>
-    <button type="submit" id="search">Search</button>
+    <button type="submit" name="cari">Search</button>
   </form>
 
   <br>

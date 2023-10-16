@@ -72,13 +72,14 @@ function update($data)
   return mysqli_affected_rows($conn);
 }
 
-function search($keyword){
-  $query = "SELECT * FROM mahasiswa WHERE nim 
-            LIKE '%$keyword%' OR 
-            nama LIKE '%$keyword%' OR 
+function cari($keyword){
+
+  $query = "SELECT * FROM mahasiswa WHERE 
+            nim LIKE '%$keyword%' OR 
+            nama LIKE '%$keyword%' OR
             jurusan LIKE '%$keyword%' OR 
             email LIKE '%$keyword%'
-          ";
+            ";
 
   return query($query);
 }
