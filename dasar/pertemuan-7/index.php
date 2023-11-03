@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if(!isset($_SESSION["login"])){
+  header("Location: login.php");
+  exit;
+}
+
 // Connection Database
 require 'functions.php';
 
@@ -21,6 +28,10 @@ if (isset($_POST["cari"])){
 </head>
 
 <body>
+  <button>
+    <a href="logout.php">Logout</a>
+  </button>
+
   <h1>Daftar Mahasiswa</h1>
 
   <a href="crud/create.php">ADD</a>
