@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["login"])){
+if (!isset($_SESSION["login"])) {
   header("Location: login.php");
   exit;
 }
@@ -12,11 +12,11 @@ require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
 // ini codingan tombol search
-if (isset($_POST["cari"])){
+if (isset($_POST["cari"])) {
   $mahasiswa = cari($_POST["keyword"]);
 }
 
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
