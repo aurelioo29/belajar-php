@@ -51,7 +51,32 @@ if (isset($_POST["cari"])) {
     <button type="submit" name="cari">Search</button>
   </form>
 
-  <br>
+  <br><br>
+
+  <!-- Button for back -->
+  <?php if ($halamanAktif > 1) : ?>
+    <a href="?halaman=<?php $halamanAktif - 1; ?>">&lt;</a>
+  <?php endif; ?>
+
+  <!-- Button for Pagination -->
+  <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+    <?php if ($i == $halamanAktif) : ?>
+      <a href="?halaman=<?php $i; ?>" style="font-weight: bold; color:aqua;">
+        <?php $i; ?>
+      </a>
+    <?php else : ?>
+      <a href="?halaman=<?php $i; ?>">
+        <?php $i; ?>
+      </a>
+    <?php endif; ?>
+  <?php endfor ?>
+
+  <!-- Button for next -->
+  <?php if ($halamanAktif < $jumlahHalaman) : ?>
+    <a href="?halaman=<?php $halamanAktif + 1; ?>">&gt;</a>
+  <?php endif; ?>
+
+  <br><br>
 
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
