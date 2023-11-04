@@ -9,7 +9,15 @@ if (!isset($_SESSION["login"])) {
 // Connection Database
 require 'functions.php';
 
-$mahasiswa = query("SELECT * FROM mahasiswa");
+// pagination configurate
+// jumlah halaman = total data / data per halaman
+$jumlahDataPerHalaman = 2;
+$jumlahData = count(query("SELECT * FROM mahasiswa"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
+$halamanAktif = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
+$mahasiswa = query("SELECT * FROM mahasiswa LIMIT $awalData, $jumlahDataPerHalaman");
 
 // ini codingan tombol search
 if (isset($_POST["cari"])) {
