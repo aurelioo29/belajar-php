@@ -2,25 +2,31 @@
 // phpinfo();
 class Database
 {
-  var $host     = 'localhost'; // Perbaiki kesalahan penulisan 'locahost'
+  var $host     = 'localhost';
   var $username = 'root';
   var $password = '';
   var $database = 'db_php_mysql';
+  var $koneksi  = '';
 
   function __construct()
   {
-    $koneksi = mysqli_connect(
+    $this->koneksi = mysqli_connect(
       $this->host,
       $this->username,
       $this->password,
       $this->database
     );
-    if ($koneksi) {
-      echo 'Database has successfully connected';
-    } else {
-      echo "Database doesn't have a successful connection";
+    if (mysqli_connect_errno()) {
+      echo 'Koneksi gagal : ' . mysqli_connect_errno();
     }
   }
-}
 
-$koneksi = new Database();
+  function get_kategori()
+  {
+    $data = mysqli_query($this->koneksi, 'SELECT * FROM tbl_m_kategori');
+    while ($row = mysqli_fetch_array($data)) {
+      $hasil[] = $row;
+    }
+    return $hasil;
+  }
+}
