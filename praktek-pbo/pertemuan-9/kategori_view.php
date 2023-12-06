@@ -98,8 +98,8 @@ $data = $db->get_kategori();
             <?php echo $row['nama_kategori'] ?>
           </td>
           <td class="action">
-            <a href="kategori_edit.php?id=<?php echo $row['id_kategori'] ?>">Update | </a>
-            <a href="proses_kategori.php?id=<?php echo $row['id_kategori'] ?>">Delete</a>
+            <a href="kategori_edit.php?id=<?php echo $row['id_kategori']; ?>">Update | </a>
+            <a href="proses_kategori.php?action=delete&id=<?php echo $row['id_kategori']; ?>">Delete</a>
           </td>
         </tr>
       <?php

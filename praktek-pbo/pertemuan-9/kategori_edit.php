@@ -26,17 +26,17 @@ if (!is_null($id_barang)) {
   <h3>Update Data</h3>
   <hr>
   <form action="proses_kategori.php?action=update" method="post">
-    <input type="hidden" name="id_kategori" value="<?php echo $data_kategori['id_kategori'] ?>">
+    <input type="hidden" name="id_kategori" value="<?php echo $data_kategori['id_kategori']; ?>">
     <table>
       <tr>
         <td>Nama Kategori</td>
         <td>:</td>
-        <td><input type="text" name="nama_kategori" value="<?php echo $data_kategori['nama_kategori'] ?>"></td>
+        <td><input type="text" name="nama_kategori" value="<?php echo $data_kategori['nama_kategori']; ?>"></td>
       </tr>
       <tr>
         <td></td>
         <td></td>
-        <td><input type="submit" value="Update" name="tombol"></td>
+        <td><input type="submit" value="update" name="tombol"></td>
       </tr>
     </table>
   </form>

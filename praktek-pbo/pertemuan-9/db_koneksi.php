@@ -58,7 +58,7 @@ class Database
   {
     mysqli_query(
       $this->koneksi,
-      "DELETE  FROM tbl_m_kategori WHERE id_kategori = '$id_kategori'"
+      "DELETE FROM tbl_m_kategori WHERE id_kategori = '$id_kategori'"
     );
   }
 }
