@@ -29,4 +29,36 @@ class Database
     }
     return $hasil;
   }
+
+  function tambah_data($nama_kategori)
+  {
+    mysqli_query(
+      $this->koneksi,
+      "INSERT INTO tbl_m_kategori (nama_kategori) VALUES ('$nama_kategori')"
+    );
+  }
+
+  function get_by_id($id_kategori)
+  {
+    mysqli_query(
+      $this->koneksi,
+      "SELECT * FROM tbl_m_kategori WHERE id_kategori = '$id_kategori'"
+    );
+  }
+
+  function update_data($nama_kategori, $id_kategori)
+  {
+    mysqli_query(
+      $this->koneksi,
+      "UPDATE tbl_m_kategori SET nama_kategori = '$nama_kategori' WHERE id_kategori = '$id_kategori'"
+    );
+  }
+
+  function delete_data($id_kategori)
+  {
+    mysqli_query(
+      $this->koneksi,
+      "DELETE  FROM tbl_m_kategori WHERE id_kategori = '$id_kategori'"
+    );
+  }
 }
