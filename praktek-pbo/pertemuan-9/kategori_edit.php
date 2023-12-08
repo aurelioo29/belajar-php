@@ -1,11 +1,13 @@
 <?php
 
+error_reporting(E_ALL);
+
 include 'db_koneksi.php';
 
 $db = new Database();
 $id_kategori = $_GET['id_kategori'];
 
-if (!is_null($id_barang)) {
+if (!is_null($id_kategori)) {
   $data_kategori = $db->get_by_id($id_kategori);
 } else {
   header('location:kategori_view.php');
@@ -25,7 +27,7 @@ if (!is_null($id_barang)) {
 <body>
   <h3>Update Data</h3>
   <hr>
-  <form action="proses_kategori.php?action=update" method="post">
+  <form action="proses_kategori.php?action=update" method="Post">
     <input type="hidden" name="id_kategori" value="<?php echo $data_kategori['id_kategori']; ?>">
     <table>
       <tr>
