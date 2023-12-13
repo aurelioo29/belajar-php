@@ -1,7 +1,5 @@
 <?php
 
-error_reporting(E_ALL);
-
 include 'db_koneksi.php';
 
 $db = new Database();
