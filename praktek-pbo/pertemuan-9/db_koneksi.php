@@ -40,15 +40,16 @@ class Database
 
   function get_by_id($id_kategori)
   {
-    mysqli_query(
+    $query = mysqli_query(
       $this->koneksi,
       "SELECT * FROM tbl_m_kategori WHERE id_kategori = '$id_kategori'"
     );
+    return $query->fetch_array();
   }
 
   function update_data($nama_kategori, $id_kategori)
   {
-    mysqli_query(
+    $query = mysqli_query(
       $this->koneksi,
       "UPDATE tbl_m_kategori SET nama_kategori = '$nama_kategori' WHERE id_kategori = '$id_kategori'"
     );
@@ -56,7 +57,7 @@ class Database
 
   function delete_data($id_kategori)
   {
-    mysqli_query(
+    $query = mysqli_query(
       $this->koneksi,
       "DELETE FROM tbl_m_kategori WHERE id_kategori = '$id_kategori'"
     );

@@ -1,11 +1,9 @@
 <?php
 
-error_reporting(E_ALL);
-
 include 'db_koneksi.php';
 
 $db = new Database();
-$id_kategori = $_GET['id_kategori'];
+$id_kategori = $_GET['id'];
 
 if (!is_null($id_kategori)) {
   $data_kategori = $db->get_by_id($id_kategori);
