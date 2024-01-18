@@ -11,8 +11,9 @@
   if (isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $hash_password = hash("sha256", $password);
 
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$hash_password'";
     $result = $db->query($sql);
 
     if($result->num_rows > 0){
@@ -20,7 +21,7 @@
 
       $_SESSION["username"] = $data["username"];
       $_SESSION["isLogin"] = true;
-      
+
       header("location: dashboard.php");
     } else {
       $login_message = "Data tidak di temukan";
